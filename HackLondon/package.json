@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "daisyui": "^4.7.3",
+    "googleapis": "^105.0.0"
+  }
+}
