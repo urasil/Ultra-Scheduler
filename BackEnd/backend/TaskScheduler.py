@@ -1,6 +1,6 @@
 import openai
-from UltradianRhytm import UltradianRhythm
-from Task import Task
+from backend.UltradianRhytm import UltradianRhythm
+from backend.Task import Task
 import datetime as dt
 import copy
 
