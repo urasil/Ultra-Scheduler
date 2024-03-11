@@ -25,8 +25,6 @@ def send_task(task=[['Task 1', dt.time(9,0), dt.time(10,0)], ['Task 2', dt.time(
     
     processed_task.sort(key=lambda x: x['start']['dateTime'])
 
-    print(2, {'events': processed_task})
-    # return jsonify({'events': processed_task})
     # If the task format is valid, send it to React
     return jsonify({'events': processed_task})
 
@@ -51,14 +49,11 @@ def receive_task():
     
     scheduler = TaskScheduler(taskList, wakeUpTime, sleepTime)
     processed_data = scheduler.find_best_combination()
-    print(1, processed_data)
 
     return send_task(processed_data)
-    # return jsonify({'task': processed_data})
 
 
 
 
 if __name__ == '__main__':
-    # receive_task({'getUpTime': '08:00', 'sleepTime': '23:00', 'events': [{'summary': '', 'start': {'dateTime': '2021-08-01T04:45:00:00'}, 'end': {'dateTime' : '2021-08-01T07:30:00'}, 'flexible': 'True'}, {'summary': 'tmrw shit', 'start': {'dateTime': '2021-08-01T17:15:00'}, 'end': {'dateTime' : '2021-08-01T23:45:00'}, 'flexible': 'True'}]})
     app.run(debug=True, host='0.0.0.0')

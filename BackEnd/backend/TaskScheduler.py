@@ -3,10 +3,12 @@ from backend.UltradianRhytm import UltradianRhythm
 from backend.Task import Task
 import datetime as dt
 import copy
+from dotenv import load_dotenv
+import os
 
 class TaskScheduler:
     def __init__(self, tasks, wakeup, sleep): 
-       api_key = "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"
+       api_key = os.getenv("OPENAI_API_KEY")
        self.client = openai.Client(
            api_key=api_key
        )
